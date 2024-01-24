@@ -12,6 +12,7 @@
             <Timer v-if="index === 0" />
             <DailyWork v-if="index === 1" />
             <CoursesProgress v-if="index === 2" />
+            <Highlight v-if="index === 3" />
         </Card>
     </div>
 </template>
