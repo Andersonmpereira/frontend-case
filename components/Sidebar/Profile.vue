@@ -4,7 +4,7 @@
         <div class="identity">
             <span class="title">
                 Sophia Williams
-                <Icon class="icon" name="ri:verified-badge-fill" width="20" height="20"/>               
+                <Icon class="icon" name="ri:verified-badge-fill" width="20" height="20"/>
             </span>
             <span class="subtitle">sophia@jurisoft.com</span>
         </div>

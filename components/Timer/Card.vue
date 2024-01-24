@@ -17,6 +17,9 @@
         </div>
         <slot/>
     </div>
+    <div class="history">
+        <slot name="history"/>
+    </div>
 </template>
 
 <script setup>

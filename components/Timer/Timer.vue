@@ -3,7 +3,10 @@
         :title="'Track App'" 
         :iconName="'logos:monday-icon'" 
     >
-        <TimerCounter />
-        <TimerAction />
+        <TimerCounter/>
+        <TimerAction/>
+        <template #history>
+            <TimerHistory />
+        </template>
     </TimerCard>
 </template>

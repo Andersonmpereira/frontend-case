@@ -10,6 +10,8 @@
             :btn-text="card.btnText"
         >
             <Timer v-if="index === 0" />
+            <DailyWork v-if="index === 1" />
+            <CoursesProgress v-if="index === 2" />
         </Card>
     </div>
 </template>
