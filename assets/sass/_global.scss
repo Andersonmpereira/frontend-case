@@ -28,16 +28,15 @@
         }
 
         .btn {
-            height: 32px;
+            display: flex;
+            align-items: center;
+            padding: 6px;
             font-size: 14px;
             font-weight: 500;
             line-height: 20px;
-            padding: 8px;
 
             .icon {
                 margin: 0 6px 0 0;
-                height: 15px;
-                width: 15px;
             }
         }
     }
@@ -46,14 +45,9 @@
 .btn-dropdown {
     background-color: transparent;
     border: none;
-    width: 20px;
-    height: 20px;
-
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
     color: $gray;
 }
 
@@ -84,7 +78,7 @@
 
 .btn-outline {
     padding: 10px;
-    background-color: transparent;
+    background-color: $white;
     border: 1px solid $borderGray;
     border-radius: 10px;
     color: $gray;

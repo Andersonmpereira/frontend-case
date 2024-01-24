@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <Logo />
-        <Navbar />
+        <NavBar />
         <SidebarProfile />
     </div>
 </template>

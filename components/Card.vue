@@ -1,68 +1,62 @@
 <template>
-    <div class="card div1">
+    <div 
+        class="card"
+        :class="card"
+    >
         <div class="heading">
             <div class="title">
-                <Icon class="icon" name="ri:timer-flash-line"/>
-                <h3>Rastreador de tempo</h3>
+                <Icon 
+                    class="icon" 
+                    :width="iconSize"
+                    :height="iconSize"
+                    :name="iconTitle"
+                    
+                />
+                <h3>{{ title }}</h3>
             </div>
             <slot/>
-            <button class="btn btn-outline">
-                <Icon class="icon" name="ri:history-line"/>
-                Histórico
+            <button
+                v-if="btnIcon || btnText"
+                class="btn btn-outline"
+            >
+                <Icon 
+                    v-if="btnIcon"
+                    class="icon" 
+                    :name="btnIcon"
+                    :width="btnIconSize"
+                    :height="btnIconSize"
+                />
+                {{ btnText }}
             </button>
         </div>
-    </div>
-    <div class="columm">
-        <div class="card div2">
-            <div class="title">
-                <Icon class="icon" name="ri:calendar-check-line"/>
-                <h3>Titulo</h3>
-                <button class="btn btn-outline">
-                    <Icon class="icon" name="ri:calendar-check-line"/>
-                    Calendário
-                </button>
-            </div>
-            <slot />
-        </div>
-        <div class="card div3">
-            <div class="title">
-                <Icon class="icon" name="ri:calendar-check-line"/>
-                <h3>Titulo</h3>
-                <button class="btn btn-outline">
-                    <Icon class="icon" name="ri:calendar-check-line"/>
-                    Calendário
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="card div4">
-        <div class="title">
-            <Icon class="icon" name="ri:calendar-check-line"/>
-            <h3>Titulo</h3>
-            <button class="btn btn-outline">
-                <Icon class="icon" name="ri:calendar-check-line"/>
-                Calendário
-            </button>
-        </div>
-    </div>
-    <div class="card div5">
-        <div class="title">
-            <Icon class="icon" name="ri:calendar-check-line"/>
-            <h3>Titulo</h3>
-            <button class="btn btn-outline">
-                <Icon class="icon" name="ri:calendar-check-line"/>
-                Calendário
-            </button>
-        </div>
-    </div>
-    <div class="card div6">
-        <div class="title">
-            <Icon class="icon" name="ri:calendar-check-line"/>
-            <h3>Titulo</h3>
-            <button class="btn btn-outline">
-                <Icon class="icon" name="ri:calendar-check-line"/>
-                Calendário
-            </button>
-        </div>
+        <slot/>
     </div>
 </template>
+
+<script setup>
+    const props = defineProps({
+        card: {
+            type: String
+        },
+        iconTitle: {
+            type: String
+        },
+        iconSize: {
+            type: Number,
+            default: 24
+        },
+        title: {
+            type: String
+        },
+        btnIcon: {
+            type: String
+        },
+        btnIconSize: {
+            type: Number,
+            default: 20
+        },
+        btnText: {
+            type: String
+        }
+    })
+</script>
