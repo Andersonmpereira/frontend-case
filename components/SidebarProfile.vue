@@ -1,8 +1,6 @@
 <template>
     <div class="profile">
-        <NuxtLink to="/">
-            <img src="../assets/img/avatar/sophia.png" alt="avatar da sophia">
-        </NuxtLink>
+        <img class="avatar" src="../assets/img/avatar/sophia-sm.png" alt="avatar da sophia">
         <div class="identity">
             <span class="title">
                 Sophia Williams

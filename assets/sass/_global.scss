@@ -1,3 +1,48 @@
+.container {
+    padding: 0 32px 32px;
+}
+
+.card {
+    padding: 16px;
+    border: 1px solid $borderGray;
+    border-radius: 10px;
+
+    .heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .title {
+            display: flex;
+            align-items: center;
+            
+            h3 {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+            }
+
+            .icon {
+                margin: 0 8px 0 0;
+            }
+        }
+
+        .btn {
+            height: 32px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 8px;
+
+            .icon {
+                margin: 0 6px 0 0;
+                height: 15px;
+                width: 15px;
+            }
+        }
+    }
+}
+
 .btn-dropdown {
     background-color: transparent;
     border: none;
@@ -30,4 +75,25 @@
 
 .pink {
     color: $pink;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-outline {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid $borderGray;
+    border-radius: 10px;
+    color: $gray;
+}
+
+.btn-orange{
+    padding: 10px;
+    background-color: $orange;
+    color: $white;
+    border-radius: 10px;
+    border: none;
 }

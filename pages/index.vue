@@ -1,3 +1,5 @@
 <template>
-    <h3>fdfsdfsdf</h3>
+    <div class="container home">
+        <Card/>
+    </div>
 </template>

@@ -3,7 +3,7 @@
         <Sidebar />
     </header>
     <main>
-        <Toolbar />
+        <Topbar />
         <slot />
     </main>
 </template>
