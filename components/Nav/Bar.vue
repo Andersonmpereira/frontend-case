@@ -85,26 +85,26 @@
 
     const fav = [
         {
-            to: '/loom-mobile-app',
+            to: '',
             class: 'fav-link',
             iconName: 'ri:checkbox-blank-circle-fill',
-            iconSize: '15',
+            iconSize: 15,
             iconColor: 'blue',
             text: 'Loom Mobile App'
         },
         {
-            to: '/monday-redesign',
+            to: '',
             class: 'fav-link',
             iconName: 'ri:checkbox-blank-circle-fill',
-            iconSize: '15',
+            iconSize: 15,
             iconColor: 'red',
             text: 'Monday Redesign'
         },
         {
-            to: '/udemy-courses',
+            to: '',
             class: 'fav-link',
             iconName: 'ri:checkbox-blank-circle-fill',
-            iconSize: '15',
+            iconSize: 15,
             iconColor: 'pink',
             text: 'Udemy Courses'
         }

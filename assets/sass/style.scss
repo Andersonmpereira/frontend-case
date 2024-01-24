@@ -235,3 +235,20 @@ main{
         grid-area: card6;
     }
 }
+
+.not-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: calc(100vh - 88px);
+    width: calc(100vw - 273px);
+
+    p{
+        font-Weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $gray;
+    }
+}
