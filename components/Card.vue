@@ -14,7 +14,7 @@
                 />
                 <h3>{{ title }}</h3>
             </div>
-            <slot/>
+            <slot name="search" />
             <button
                 v-if="btnIcon || btnText"
                 class="btn btn-outline"

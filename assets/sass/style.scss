@@ -115,11 +115,6 @@ main{
                 }
             }
 
-            &:hover {
-                background-color: $lightGray;
-                border-radius: 8px;
-            }
-
             &.router-link-active {
                 background-color: $lightGray;
                 color: $black;
@@ -140,6 +135,8 @@ main{
                     
                 }
             }
+
+            @include simple-hover()
         }
     }
 
@@ -233,6 +230,74 @@ main{
   
     .card6 {
         grid-area: card6;
+    }
+}
+
+.timer-card {
+    height: 158px;
+    margin: 16px;
+    border: 1px solid $borderGray;
+    border-radius: 10px;
+
+    .heading {
+        display: flex;
+        height: 32px;
+        padding: 6px 12px;
+        background-color: $lightGray;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid $borderGray;
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: $gray;
+        }
+    }
+
+    .counter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        padding: 18px 16px 10px;
+
+        .status {
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 12px;
+            text-transform: uppercase;
+            color: $gray;
+        }
+
+        .numbers {
+            font-size: 40px;
+            line-height: 48px;
+            font-weight: 500;
+        }
+    }
+    
+    .action {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        .btn {
+            display: inline-flex;
+            color: $orange;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+
+            .icon {
+                color: $orange;
+                margin: 0 4px 0 0;
+            }
+
+            @include simple-hover()
+        }
     }
 }
 

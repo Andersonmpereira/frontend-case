@@ -8,7 +8,7 @@
             <span class="subtitle">Marketing Juridico</span>
         </div>
         <button class="btn-dropdown"> 
-            <Icon class="icon" name="ri:arrow-down-s-line" width="20" height="20"/> 
+            <Icon class="icon" name="ri:arrow-down-s-line" width="20" height="20"/>
         </button>        
     </div>
 </template>

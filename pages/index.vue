@@ -8,7 +8,9 @@
             :title="card.title"
             :btn-icon="card.btnIcon"
             :btn-text="card.btnText"
-        />
+        >
+            <Timer v-if="index === 0" />
+        </Card>
     </div>
 </template>
 

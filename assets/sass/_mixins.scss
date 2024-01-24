@@ -13,3 +13,10 @@
       background-color: $white;
     }
 }
+
+@mixin simple-hover() {
+  &:hover{
+    background-color: $lightGray;
+    border-radius: 8px;
+  }
+}
