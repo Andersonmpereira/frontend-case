@@ -20,3 +20,29 @@
     border-radius: 8px;
   }
 }
+
+@mixin text-setup($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@mixin column-center() {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+@mixin not-information() {
+  @include column-center;
+
+  p {
+    margin: 20px 16px;
+    color: $mediumGray;
+    @include text-setup(14px, 20px, 400);
+  }
+}

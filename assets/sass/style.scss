@@ -6,7 +6,7 @@
 
 body {
     font-family: "Inter", sans-serif;
-    @include custom-scrollbar()
+    @include custom-scrollbar();
 }
 
 main{
@@ -23,7 +23,7 @@ main{
     border-right: 1px solid $borderGray;
     overflow-y: scroll;
     overflow-x: hidden;
-    @include custom-scrollbar()
+    @include custom-scrollbar();
 }
 
 .logo, .profile {
@@ -38,9 +38,7 @@ main{
         .title{
             display: flex;
             align-items: center;
-            height: 20px;
-            font-size: 14px;
-            font-weight: 500;
+            @include text-setup(14px, 20px, 500);
 
             .icon{
                 color: $oceanBlue;
@@ -49,9 +47,7 @@ main{
         }
 
         .subtitle{
-            height: 16px;
-            font-size: 12px;
-            font-weight: 400;
+            @include text-setup(12px, 16px, 400);
         }
 
     }
@@ -68,10 +64,9 @@ main{
         height: 24px;
         padding: 4px;
         margin: 8px 0;
-        font-weight: 500;
-        font-size: 14px;
         text-transform: uppercase;
         color: $mediumGray;
+        @include text-setup(14px, 20px, 500);
     }
 
     .nav-list {
@@ -81,9 +76,7 @@ main{
             padding: 8px 12px;
             margin: 8px 0 0 0;
             color: $gray;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
+            @include text-setup(14px, 20px, 500);
 
             .icon {
                 margin: 0 8px 0 0;
@@ -101,9 +94,7 @@ main{
                 border: 1px solid $borderGray;
                 border-radius: 4px;
                 color: $mediumGray;
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 20px;
+                @include text-setup(14px, 20px, 500);
             }
 
             &.fav-link{
@@ -136,7 +127,7 @@ main{
                 }
             }
 
-            @include simple-hover()
+            @include simple-hover();
         }
     }
 
@@ -162,14 +153,11 @@ main{
         }
 
         .title {
-            font-size: 18px;
-            line-height: 24px;
+            @include text-setup(18px, 24px, 500);
         }
 
         .subtitle {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
+            @include text-setup(14px, 20px, 400);
         }
     }
 }
@@ -251,31 +239,25 @@ main{
         align-items: center;
 
         .title {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
             color: $gray;
+            @include text-setup(14px, 20px, 400);
         }
     }
 
     .counter {
         display: flex;
         flex-direction: column;
-        align-items: center;    
+        align-items: center;
         padding: 18px 16px 10px;
 
         .status {
-            font-size: 11px;
-            font-weight: 500;
-            line-height: 12px;
             text-transform: uppercase;
             color: $gray;
+            @include text-setup(11px, 12px, 500);
         }
 
         .numbers {
-            font-size: 40px;
-            line-height: 48px;
-            font-weight: 500;
+            @include text-setup(40px, 48px, 500);
         }
     }
     
@@ -288,16 +270,14 @@ main{
         .btn {
             display: inline-flex;
             color: $orange;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 16px;
+            @include text-setup(12px, 16px, 500);
 
             .icon {
                 color: $orange;
                 margin: 0 4px 0 0;
             }
 
-            @include simple-hover()
+            @include simple-hover();
         }
     }
 
@@ -307,18 +287,8 @@ main{
     height: 122px;
 
     .not-history {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: 100%;
-    
-        p{
-            font-Weight: 400;
-            font-size: 14px;
-            line-height: 20px;
-            color: $mediumGray;
-        }
+        @include not-information();
     }
 }
 
@@ -330,9 +300,7 @@ main{
 
 .work-time {
     height: 24px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
+    @include text-setup(16px, 24px, 400);
 
     span {
         font-weight: 500;
@@ -355,11 +323,9 @@ main{
 
 .work-label {
     span {
-        font-size: 12px;
-        line-height: 16px;
-        font-weight: 400;
         color: $borderGray;
         margin: 0 16px 0 0;
+        @include text-setup(12px, 16px, 400);
         
         .icon {
             color: $borderGray;
@@ -385,25 +351,19 @@ main{
 
         h4 {
             height: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
+            @include text-setup(14px, 20px, 500);
         }
 
         p {
             height: 32px;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 16px;
             margin: 4px 0 8px 0;
+            @include text-setup(12px, 16px, 400);
         }
 
         a {
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 16px;
             color: $orange;
             text-decoration: underline;
+            @include text-setup(12px, 16px, 500)
         }
     }
 }
@@ -444,38 +404,44 @@ main{
     }
 
     .not-highlight{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
         min-height: 250px;
-        text-align: center;
+        @include not-information();
+    }
+}
 
-        p {
-            margin: 20px 16px;
-            font-size: 14px;
-            line-height: 20px;
-            font-weight: 400;
-            color: $mediumGray;
+.courses {
+    .table{
+        width: 100%;
+        margin: 16px 0;
+        border-collapse: collapse;
+
+        thead {
+            height: 36px;
+            background-color: $lightGray;
+            color: #CDD0D5;
+            @include text-setup (14px, 36px, 400);
+            
+            th {
+                border-radius: 8px;
+            }
         }
+    }
+    .not-courses{
+        min-height: 250px;
+        @include not-information();
+    }
+}
+
+.feedback {
+    .not-feedback{
+        min-height: 300px;
+        @include not-information();
     }
 }
 
 .not-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     height: calc(100vh - 88px);
     width: calc(100vw - 273px);
-
-    p {
-        font-Weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: $mediumGray;
-    }
+    @include not-information();
 }

@@ -13,6 +13,8 @@
             <DailyWork v-if="index === 1" />
             <CoursesProgress v-if="index === 2" />
             <Highlight v-if="index === 3" />
+            <Courses v-if="index === 4" />
+            <Feedback v-if="index === 5" />
         </Card>
     </div>
 </template>
