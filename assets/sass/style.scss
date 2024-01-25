@@ -401,12 +401,28 @@ main{
     justify-content: space-between;
     width: 100%;
     margin: 16px 0;
+    gap: 6px;
 
     span {
         height: 10px;
         width: 30%;
         border-radius: 2px;
         background-color: $borderGray;
+    }
+
+    &.colorize {        
+        .relax {
+            background-color: $yellow;
+        }
+
+        .active {
+            background-color: $oceanBlue;
+        }
+
+        .extra-hour {
+            background-color: $blue;
+        }
+        
     }
 }
 
@@ -420,6 +436,31 @@ main{
             color: $borderGray;
             margin: 0 4px 0 0;
         }
+    }
+
+    &.colorize {
+        span {
+            color: $gray;
+        }
+        
+        .relax {
+            .icon{
+                color: $yellow;
+            }
+        }
+
+        .active {
+            .icon{
+                color: $oceanBlue;
+            }
+        }
+
+        .extra-hour {
+            .icon{
+                color: $blue;
+            }
+        }
+        
     }
     
 }

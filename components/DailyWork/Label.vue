@@ -1,5 +1,8 @@
 <template>
-    <div class="work-label">
+    <div 
+        class="work-label"
+        :class="colorize"
+    >
         <span class="relax">
             <Icon class="icon" name="ri:checkbox-blank-circle-fill" width="16" height="16"/>
             Descanso
@@ -14,3 +17,16 @@
         </span>
     </div>
 </template>
+
+<script setup>
+    const props = defineProps({
+        status: {
+            type: Boolean,
+            default: false
+        }
+    })
+
+    const colorize = computed(() => {
+        if (props.status) return 'colorize'
+    })
+</script>
