@@ -2,7 +2,7 @@
     <header>
         <Sidebar />
     </header>
-    <main>
+    <main class="main">
         <Topbar />
         <slot />
     </main>

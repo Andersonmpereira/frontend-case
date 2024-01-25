@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .container {
     padding: 0 32px 32px;
 }
@@ -17,9 +19,7 @@
             align-items: center;
             
             h3 {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 24px;
+                @include text-setup(16px, 24px, 500);
             }
 
             .icon {
@@ -31,9 +31,7 @@
             display: flex;
             align-items: center;
             padding: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
+            @include text-setup(14px, 20px, 500);
 
             .icon {
                 margin: 0 6px 0 0;
