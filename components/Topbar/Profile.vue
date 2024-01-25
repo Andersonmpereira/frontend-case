@@ -19,9 +19,12 @@
     const toggle = () => {
         const sidebar = document.querySelector('.sidebar')
         const main = document.querySelector('.main')
+        const topbar = document.querySelector('.topbar')
+
         if (sidebar) {
-            sidebar.classList.toggle('sidebar-close')
-            main.classList.toggle('sidebar-close')
+            sidebar.classList.toggle('toggle')
+            main.classList.toggle('toggle')
+            topbar.classList.toggle('toggle')
         }
     }
 </script>

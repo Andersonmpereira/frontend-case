@@ -15,7 +15,7 @@ main{
     left: 273px;
     transition: 0.5s;
 
-    &.sidebar-close{
+    &.toggle{
         width: calc(100% - 80px);
         left: 80px;
         transition: 0.5s;
@@ -33,7 +33,7 @@ main{
     transition: 0.5s;
     @include custom-scrollbar();
 
-    &.sidebar-close {
+    &.toggle {
         width: 80px;
         transition: 0.5s;
 
@@ -44,7 +44,6 @@ main{
             display: none;
             transition: 0.5s;
         }
-        
     }   
 }
 
@@ -250,7 +249,7 @@ main{
 
 .timer-card {
     height: 158px;
-    margin: 16px;
+    margin: 16px 0;
     border: 1px solid $borderGray;
     border-radius: 10px;
 
@@ -283,7 +282,12 @@ main{
         }
 
         .numbers {
+            display: flex;
             @include text-setup(40px, 48px, 500);
+
+            .seconds {
+                color: $mediumGray;
+            }
         }
     }
     
@@ -295,12 +299,34 @@ main{
 
         .btn {
             display: inline-flex;
-            color: $orange;
             @include text-setup(12px, 16px, 500);
-
+            
             .icon {
-                color: $orange;
                 margin: 0 4px 0 0;
+            }
+            
+            &.orange {
+                color: $orange;
+
+                .icon {
+                    color: $orange;
+                }
+            }
+
+            &.red {
+                color: $red;
+
+                .icon {
+                    color: $red;
+                }
+            }
+
+            &.black {
+                color: $black;
+
+                .icon {
+                    color: $black;
+                }
             }
 
             @include simple-hover();
@@ -309,8 +335,45 @@ main{
 
 }
 
-.history{
-    height: 122px;
+.history {
+    .title {
+        margin: 0 0 14px 0;
+        color: $gray;
+        @include text-setup(11px, 12px, 500)
+    }
+
+    .history-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 14px 0 16px 0;
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;        
+            width: 40px;
+            height: 40px;
+            border: 1px solid $borderGray;
+            border-radius: 100%;
+            margin: 0 10px 0 0;
+
+            .icon {
+                color: $blue;
+            }
+        }
+
+        .item-content {
+            width: 230px;
+
+            .item-title {
+                @include text-setup(14px, 20px, 400)
+            }
+
+            .item-timer {
+                @include text-setup(12px, 16px, 400)
+            }
+        }
+    }
 
     .not-history {
         height: 100%;
@@ -365,7 +428,6 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 16px;
 
     .progress {
         width: 80px;

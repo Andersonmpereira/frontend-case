@@ -9,48 +9,51 @@
             :btn-icon="card.btnIcon"
             :btn-text="card.btnText"
         >
-            <Timer v-if="index === 0" />
-            <DailyWork v-if="index === 1" />
-            <CoursesProgress v-if="index === 2" />
-            <Highlight v-if="index === 3" />
-            <Courses v-if="index === 4" />
-            <Feedback v-if="index === 5" />
+            <component :is="card.componentName" />
         </Card>
     </div>
 </template>
 
 <script setup>
+    import { Timer, DailyWork, CoursesProgress, Highlight, Courses, Feedback } from '#components'
+
     const cards = [
         {
             iconTitle: 'ri:timer-flash-line',
             title: 'Rastreador de tempo',
             btnIcon: 'ri:history-line',
-            btnText: 'Histórico'
+            btnText: 'Histórico',
+            componentName: Timer
         },
         {
             iconTitle: 'ri:timer-line',
             title: 'Horas diárias de trabalho',
-            btnText: 'Detalhes'
+            btnText: 'Detalhes',
+            componentName: DailyWork
         },
         {
             iconTitle: 'ri:book-3-line',
             title: 'Cursos - Progresso',
-            btnText: 'Ver todos'
+            btnText: 'Ver todos',
+            componentName: CoursesProgress
         },
         {
             iconTitle: 'ri:star-smile-line',
             title: 'Destaque colaboradores',
             btnIcon: 'ri:share-forward-line',
-            btnText: 'Enviar'
+            btnText: 'Enviar',
+            componentName: Highlight
         },
         {
             iconTitle: 'ri:book-3-line',
             title: 'Cursos',
-            btnText: 'Ver todos'
+            btnText: 'Ver todos',
+            componentName: Courses
         },
         {
             iconTitle: 'ri:discuss-line',
-            title: 'Feedback diário'
+            title: 'Feedback diário',
+            componentName: Feedback
         }
     ]
 </script>
