@@ -1,0 +1,104 @@
+@import 'mixins';
+
+.container {
+    padding: 0 32px 32px;
+}
+
+.card {
+    padding: 16px;
+    border: 1px solid $gray-border;
+    border-radius: 10px;
+
+    .heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .title {
+            display: flex;
+            align-items: center;
+            
+            h3 {
+                @include text-setup(16px, 24px, 500);
+            }
+
+            .icon {
+                margin: 0 8px 0 0;
+            }
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            padding: 6px;
+            @include text-setup(14px, 20px, 500);
+
+            .icon {
+                margin: 0 6px 0 0;
+            }
+        }
+    }
+}
+
+.icon {
+    color: $gray;
+}
+
+.divider {
+    display: block;
+    height: 1px;
+    background-color: $gray-border;
+    border: $gray-border;
+    margin: 0 20px;
+}
+
+.blue {
+    color: $blue;
+}
+
+.red {
+    color: $red;
+}
+
+.pink {
+    color: $pink;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.oceanBlue {
+    color: $blue-ocean;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn-dropdown {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-outline {
+    padding: 10px;
+    background-color: $white;
+    border: 1px solid $gray-border;
+    border-radius: 10px;
+    color: $gray;
+}
+
+.btn-orange {
+    padding: 10px;
+    background-color: $orange;
+    color: $white;
+    border-radius: 10px;
+    border: none;
+}

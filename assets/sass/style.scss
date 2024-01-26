@@ -1,0 +1,904 @@
+@import 'variables';
+@import 'normalize';
+@import 'global';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: "Inter", sans-serif;
+    @include custom-scrollbar();
+}
+
+main {
+    position: relative;
+    width: calc(100% - 273px);
+    left: 273px;
+    transition: 0.5s;
+
+    &.toggle {
+        width: calc(100% - 80px);
+        left: 80px;
+        transition: 0.5s;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    width: 272px;
+    height: 100%;
+    background-color: $white;
+    border-right: 1px solid $gray-border;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: 0.5s;
+    @include custom-scrollbar();
+
+    &.toggle {
+        width: 80px;
+        transition: 0.5s;
+
+        .nav-text,
+        .identity,
+        .btn-dropdown,
+        .shortcut {
+            display: none;
+            transition: 0.5s;
+        }
+    }   
+}
+
+.logo, .profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    padding: 12px;
+
+    .identity {
+        .title {
+            display: flex;
+            align-items: center;
+            @include text-setup(14px, 20px, 500);
+
+            .icon {
+                color: $blue-ocean;
+                margin: 0 0 0 5px;
+            }
+        }
+
+        .subtitle {
+            @include text-setup(12px, 16px, 400);
+        }
+    }
+}
+
+.navbar {
+    width: 272px;
+}
+
+.menu {
+    padding: 20px 20px 0 20px;
+    
+    .title {
+        height: 24px;
+        padding: 4px;
+        margin: 8px 0;
+        text-transform: uppercase;
+        color: $gray-medium;
+        @include text-setup(14px, 20px, 500);
+    }
+
+    .nav-list {
+        .nav-link {
+            display: flex;
+            height: 36px;
+            padding: 8px 12px;
+            margin: 8px 0 0 0;
+            color: $gray;
+            @include text-setup(14px, 20px, 500);
+
+            .icon {
+                margin: 0 8px 0 0;
+
+                &.dot {
+                    font-size: 36px;
+                }
+            }
+            
+            .shortcut {
+                width: 37px;
+                height: 20px;
+                padding: 0;
+                background: $white;
+                border: 1px solid $gray-border;
+                border-radius: 4px;
+                color: $gray-medium;
+                @include text-setup(14px, 20px, 500);
+            }
+
+            &.fav-link {
+                justify-content: space-between;
+                
+                .list-content {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &.router-link-active {
+                background-color: $gray-light;
+                color: $black;
+                border-radius: 8px;
+
+                .icon {
+                    color: $orange;
+                }
+    
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    height: 20px;
+                    width: 4px;
+                    border-radius: 0 4px 4px 0;
+                    background-color: $orange;
+                }
+            }
+
+            @include simple-hover();
+        }
+    }
+
+    &.tools {
+        margin: 80px 0 16px 0;
+    }
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+
+    .profile {
+        justify-content: flex-start;
+        padding: 20px 32px;
+        width: auto;
+
+        .btn {
+            margin: 0 16px 0 0;
+        }
+
+        .avatar {
+            height: 48px;
+            width: 48px;
+            margin: 0 14px 0 0;
+        }
+
+        .title {
+            @include text-setup(18px, 24px, 500);
+        }
+
+        .subtitle {
+            @include text-setup(14px, 20px, 400);
+        }
+    }
+}
+
+.topbar-tools {
+    padding: 24px 32px;
+
+    .btn {
+        height: 40px;
+        min-width: 40px;
+        color: $gray;
+        margin: 0 0 0 12px;
+
+        &.btn-orange {
+            color: $white;
+            min-width: 160px;
+            
+            .icon {
+                color: $white;
+            }
+        }
+
+        &.btn-outline {
+            min-width: 124px;
+        }
+
+        &.notify {
+            &:before {
+                display: block;
+                position: relative;
+                top: 8px;
+                left: 16px;
+                content: "";
+                width: 8px;
+                height: 8px;
+                background-color: $red;
+                border: 2px solid $white;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+.home {
+    display: grid;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "timer work highlight"
+        "timer progress highlight"
+        "courses courses feedback"
+    ;    
+  
+    .card1 {
+        grid-area: timer;
+    }
+  
+    .card2 {
+        grid-area: work;
+    }
+  
+    .card3 {
+        grid-area: progress;
+    }
+  
+    .card4 {
+        grid-area: highlight;
+    }
+  
+    .card5 {
+        grid-area: courses;
+    }
+  
+    .card6 {
+        grid-area: feedback;
+    }
+}
+
+.timer-card {
+    height: 158px;
+    margin: 16px 0;
+    border: 1px solid $gray-border;
+    border-radius: 10px;
+
+    .heading {
+        display: flex;
+        height: 32px;
+        padding: 6px 12px;
+        background-color: $gray-light;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid $gray-border;
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+            color: $gray;
+            @include text-setup(14px, 20px, 400);
+        }
+    }
+
+    .counter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 18px 16px 10px;
+
+        .status {
+            text-transform: uppercase;
+            color: $gray;
+            @include text-setup(11px, 12px, 500);
+        }
+
+        .numbers {
+            display: flex;
+            @include text-setup(40px, 48px, 500);
+
+            .seconds {
+                color: $gray-medium;
+            }
+        }
+    }
+    
+    .action {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        .btn {
+            display: inline-flex;
+            @include text-setup(12px, 16px, 500);
+            
+            .icon {
+                margin: 0 4px 0 0;
+            }
+            
+            &.orange {
+                color: $orange;
+
+                .icon {
+                    color: $orange;
+                }
+            }
+
+            &.red {
+                color: $red;
+
+                .icon {
+                    color: $red;
+                }
+            }
+
+            &.black {
+                color: $black;
+
+                .icon {
+                    color: $black;
+                }
+            }
+
+            @include simple-hover();
+        }
+    }
+}
+
+.history {
+    .title {
+        margin: 0 0 14px 0;
+        color: $gray;
+        @include text-setup(11px, 12px, 500);
+    }
+
+    .history-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 14px 0 16px 0;
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;        
+            width: 40px;
+            height: 40px;
+            border: 1px solid $gray-border;
+            border-radius: 100%;
+            margin: 0 10px 0 0;
+
+            .icon {
+                color: $blue;
+            }
+        }
+
+        .item-content {
+            width: 230px;
+
+            .item-title {
+                @include text-setup(14px, 20px, 400);
+            }
+
+            .item-timer {
+                @include text-setup(12px, 16px, 400);
+            }
+        }
+    }
+
+    .not-history {
+        height: 100%;
+        @include not-information();
+    }
+}
+
+.card {
+    .divider {
+        margin: 16px 0;
+    }
+}
+
+.work-time {
+    height: 24px;
+    @include text-setup(16px, 24px, 400);
+
+    span {
+        font-weight: 500;
+    }
+}
+
+.work-progress {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 16px 0;
+    gap: 6px;
+
+    span {
+        height: 10px;
+        width: 30%;
+        border-radius: 2px;
+        background-color: $gray-border;
+    }
+
+    &.colorize {        
+        .relax {
+            background-color: $yellow;
+        }
+
+        .active {
+            background-color: $blue-ocean;
+        }
+
+        .extra-hour {
+            background-color: $blue;
+        }
+    }
+}
+
+.work-label {
+    span {
+        color: $gray-border;
+        margin: 0 16px 0 0;
+        @include text-setup(12px, 16px, 400);
+        
+        .icon {
+            color: $gray-border;
+            margin: 0 4px 0 0;
+        }
+    }
+
+    &.colorize {
+        span {
+            color: $gray;
+        }
+        
+        .relax {
+            .icon{
+                color: $yellow;
+            }
+        }
+
+        .active {
+            .icon{
+                color: $blue-ocean;
+            }
+        }
+
+        .extra-hour {
+            .icon{
+                color: $blue;
+            }
+        }
+    }
+}
+
+.coursesProgress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .pie {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+
+        &.empty {
+            .progress-bar {
+                display: none
+            }
+        }
+    }    
+
+    .progress-circle {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 80px;
+        width: 80px;
+        background-color: $white;
+        border: 6px solid $gray-border;
+        border-radius: 50%;
+    }
+
+    .progress-bar {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;  
+        width: 80px;
+        height: 80px;
+        border: 6px solid $orange;
+        border-radius: 50%;
+        clip-path: polygon(50% 0%, 50% 50%, 100% 50%, 100% 0%);
+    }
+
+    .score {
+        z-index: 4;
+        position: absolute;
+        width: 80px;
+        margin: 30px 0;
+        color: $gray;
+        text-align: center;
+        @include text-setup(14px, 20px, 500);
+    }
+
+    .content-courses {
+        width: 220px;
+
+        h4 {
+            height: 20px;
+            @include text-setup(14px, 20px, 500);
+        }
+
+        p {
+            height: 32px;
+            margin: 4px 0 8px 0;
+            @include text-setup(12px, 16px, 400);
+        }
+
+        a {
+            color: $orange;
+            text-decoration: underline;
+            @include text-setup(12px, 16px, 500)
+        }
+    }
+}
+
+.highlights {    
+    .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        margin: 16px 0;
+        background-color: $gray-light;
+        border-radius: 10px;
+
+        .btn {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            width: 33%;
+            height: 28px;
+            padding: 0;
+            margin: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+            color: $gray;
+
+            &.active {
+                background-color: $white;
+                color: $black;
+                border-radius: 8px;
+                box-shadow: 0px 6px 10px 0px #1B1C1D0F;
+            }
+
+            &.disabled {
+                background-color: transparent;
+                cursor: not-allowed;
+            }
+        }
+    }
+    
+    .general, .gift {
+        @include column-center();
+
+        img {
+            margin: 16px 0;
+        }
+
+        .identity {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                margin: 0 0 6px 0;
+                @include text-setup(18px, 24px, 500);
+            }
+
+            .subtitle, .achievement {
+                @include text-setup(16px, 12px, 400);
+            }
+        }
+    }
+    
+    .comment-item {
+        display: flex;
+        border-bottom: 1px solid $gray-border;
+        padding: 16px 0;
+        
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .avatar {
+        margin: 0 12px 0 0;
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        .name {
+            @include text-setup(12px, 16px, 400);
+            color: $gray;
+        }
+
+        .text {
+            @include text-setup(14px, 20px, 400);
+            color: $black;
+        }
+    }
+    
+    .not-highlight {
+        min-height: 250px;
+        @include not-information();
+    }
+
+    .icon {
+        .red {
+            color: $red;
+        }
+    }
+
+    .btn-outline {
+        width: 100%;
+        @include text-setup(14px, 20px, 500);
+
+        .icon {
+            margin: 0 8px 0 0;
+        }
+    }
+}
+
+.courses {
+    overflow-x:auto;
+
+    .table {
+        width: 100%;
+        margin: 16px 0;
+        border-collapse: collapse;
+
+        .head {
+            height: 36px;
+            background-color: $gray-light;
+            color: $gray;
+            @include text-setup (14px, 20px, 400);
+            
+            th {
+                border-radius: 8px;
+                text-align: left;
+                padding: 8px 12px;
+            }
+        }
+
+        .body {
+            td {
+                vertical-align: middle;
+                padding: 12px 20px 12px;
+            }
+        }
+
+        .teacher {
+            display: flex;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            margin: 12px;
+        }
+        
+        .identity, .course-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .identity {
+            .subtitle{
+                max-width: 108px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .title {
+            margin: 0 0 4px 0;
+            @include text-setup (14px, 20px, 400);
+        }
+
+        .subtitle {            
+            @include text-setup (12px, 14px, 400);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+        }
+
+        .progress-bar {
+            width: 75%;
+        }
+
+        .bar {
+            display: block;
+            position: relative;
+            width: 100%;
+            top: 5px;
+            height: 6px;
+            background-color: $gray-border;
+            border-radius: 8px;
+        }
+
+        .progress {
+            display: block;
+            position: relative;
+            top: -1px;
+            width: 70%;
+            height: 6px;
+            background-color: $orange;
+            border-radius: 8px;
+        }
+
+        .percent {
+            margin: 0 0 0 4px;
+            @include text-setup (12px, 16px, 400);
+        }
+
+        .badget {
+            display: inline-block;
+            border: 1px solid $gray-border;
+            border-radius: 6px;
+            padding: 4px 8px 4px 4px;
+            color: $gray;
+            padding: 4px 8px 4px 4px;
+            @include text-setup (12px, 16px, 500);
+
+            .icon {
+                margin: 0 4px 0 0;
+                
+                &.green {
+                    color: $green;
+                    
+                }
+
+                &.orange {
+                    color: $orange;
+                }
+            }
+        }
+    }
+
+    .not-courses {
+        min-height: 250px;
+        @include not-information();
+    }
+}
+
+.not-feedback {
+    min-height: 400px;
+    @include not-information();
+}
+    
+.feedback {
+    @include column-center();
+    min-height: 400px;
+
+    .info {
+        @include column-center();
+        width: 100%;
+        margin: 16px 0;
+        
+        h5 {
+            @include text-setup(16px, 24px, 500);
+        }
+
+        p {
+            @include text-setup(12px, 16px, 400);
+        }
+    }
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 0 12px 0;
+        background-color: #FEF3EB;
+        border-radius: 100%;
+
+        .icon {
+            color: $orange;
+        }
+    }
+
+    .interaction {
+        width: 100%;
+    }
+
+    .mood {
+        margin: 16px 0;
+    }
+
+    .mood-list {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            border: 1px solid $gray-border;
+            width: 25%;
+            
+            .btn {
+                width: 100%;
+                height: 100%;
+                padding: 8px 22px;
+            }
+
+
+            &:first-child {
+                border-top-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+            }
+
+            &:hover {
+                background-color: $gray-light;
+            }
+        }
+    }
+
+    .input-lg {
+        position: relative;
+        top: -1px;
+        width: 100%;
+        min-height: 84px;
+        padding: 12px;
+        border: 1px solid $gray-border;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        resize: none;
+        font-family: "Inter", sans-serif;
+        color: $gray;
+        @include text-setup(14px, 20px, 400);
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        height: 36px;
+        color: $gray;
+        @include text-setup(14px, 20px, 500);
+
+        &:hover {
+            background-color: $gray-light;
+        }
+    }
+}
+
+.not-content {
+    height: 100vh;
+    height: calc(100vh - 88px);
+    width: calc(100vw - 273px);
+    @include not-information();
+}
+
+@import 'mobile';
