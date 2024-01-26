@@ -52,10 +52,10 @@ http://localhost:3000/
 
 Alguns dados são mockados e é possível ativá-los ou desativá-los por meio da variável/prop chamada `mock`. Para ativar o `mock`, defina `mock=true`; para desativá-lo e visualizar os dados reais, defina `mock=false`.
 
-- [Courses.vue](https://sass-lang.com/install)
-- [CoursesProgress.vue](https://sass-lang.com/install)
-- [DailyWork.vue](https://sass-lang.com/install)
-- [Highlight.vue](https://sass-lang.com/install)
+- [Courses.vue](https://github.com/Andersonmpereira/frontend-case/blob/master/components/Courses/Courses.vue)
+- [CoursesProgress.vue](https://github.com/Andersonmpereira/frontend-case/blob/master/components/CoursesProgress/CoursesProgress.vue)
+- [DailyWork.vue](https://github.com/Andersonmpereira/frontend-case/blob/master/components/DailyWork/DailyWork.vue)
+- [Highlight.vue](https://github.com/Andersonmpereira/frontend-case/blob/master/components/Highlight/Highlight.vue)
 
 ## Estrutura do Projeto
 
