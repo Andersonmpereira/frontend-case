@@ -6,7 +6,7 @@
 
 .card {
     padding: 16px;
-    border: 1px solid $borderGray;
+    border: 1px solid $gray-border;
     border-radius: 10px;
 
     .heading {
@@ -40,12 +40,6 @@
     }
 }
 
-.btn-dropdown {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-
 .icon {
     color: $gray;
 }
@@ -53,7 +47,8 @@
 .divider {
     display: block;
     height: 1px;
-    border: 1px solid $borderGray;
+    background-color: $gray-border;
+    border: $gray-border;
     margin: 0 20px;
 }
 
@@ -74,11 +69,17 @@
 }
 
 .oceanBlue {
-    color: $oceanBlue;
+    color: $blue-ocean;
 }
 
 .btn {
     cursor: pointer;
+}
+
+.btn-dropdown {
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
 
 .btn-transparent {
@@ -89,7 +90,7 @@
 .btn-outline {
     padding: 10px;
     background-color: $white;
-    border: 1px solid $borderGray;
+    border: 1px solid $gray-border;
     border-radius: 10px;
     color: $gray;
 }

@@ -1,5 +1,5 @@
 <template>
-    <span class="divider"></span>
+    <hr class="divider"/>
     <nav class="navbar">
         <Menu
             :title="'main'"
@@ -36,7 +36,7 @@
             />
         </Menu>
     </nav>
-    <span class="divider"></span>
+    <hr class="divider"/>
 </template>
 
 <script setup>

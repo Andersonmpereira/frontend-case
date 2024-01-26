@@ -9,25 +9,25 @@ body {
     @include custom-scrollbar();
 }
 
-main{
+main {
     position: relative;
     width: calc(100% - 273px);
     left: 273px;
     transition: 0.5s;
 
-    &.toggle{
+    &.toggle {
         width: calc(100% - 80px);
         left: 80px;
         transition: 0.5s;
     }
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     width: 272px;
     height: 100%;
     background-color: $white;
-    border-right: 1px solid $borderGray;
+    border-right: 1px solid $gray-border;
     overflow-y: scroll;
     overflow-x: hidden;
     transition: 0.5s;
@@ -56,21 +56,20 @@ main{
     padding: 12px;
 
     .identity {
-        .title{
+        .title {
             display: flex;
             align-items: center;
             @include text-setup(14px, 20px, 500);
 
-            .icon{
-                color: $oceanBlue;
+            .icon {
+                color: $blue-ocean;
                 margin: 0 0 0 5px;
             }
         }
 
-        .subtitle{
+        .subtitle {
             @include text-setup(12px, 16px, 400);
         }
-
     }
 }
 
@@ -86,7 +85,7 @@ main{
         padding: 4px;
         margin: 8px 0;
         text-transform: uppercase;
-        color: $mediumGray;
+        color: $gray-medium;
         @include text-setup(14px, 20px, 500);
     }
 
@@ -112,23 +111,23 @@ main{
                 height: 20px;
                 padding: 0;
                 background: $white;
-                border: 1px solid $borderGray;
+                border: 1px solid $gray-border;
                 border-radius: 4px;
-                color: $mediumGray;
+                color: $gray-medium;
                 @include text-setup(14px, 20px, 500);
             }
 
-            &.fav-link{
+            &.fav-link {
                 justify-content: space-between;
                 
-                .list-content{
+                .list-content {
                     display: flex;
                     align-items: center;
                 }
             }
 
             &.router-link-active {
-                background-color: $lightGray;
+                background-color: $gray-light;
                 color: $black;
                 border-radius: 8px;
 
@@ -144,7 +143,6 @@ main{
                     width: 4px;
                     border-radius: 0 4px 4px 0;
                     background-color: $orange;
-                    
                 }
             }
 
@@ -152,7 +150,7 @@ main{
         }
     }
 
-    &.tools{
+    &.tools {
         margin: 80px 0 16px 0;
     }
 }
@@ -162,7 +160,7 @@ main{
     justify-content: space-between;
     height: 88px;
 
-    .profile{
+    .profile {
         justify-content: flex-start;
         padding: 20px 32px;
         width: auto;
@@ -187,10 +185,10 @@ main{
     }
 }
 
-.topbar-tools{
+.topbar-tools {
     padding: 24px 32px;
 
-    .btn{
+    .btn {
         height: 40px;
         min-width: 40px;
         color: $gray;
@@ -205,8 +203,23 @@ main{
             }
         }
 
-        &.btn-outline{
+        &.btn-outline {
             min-width: 124px;
+        }
+
+        &.notify {
+            &:before {
+                display: block;
+                position: relative;
+                top: 8px;
+                left: 16px;
+                content: "";
+                width: 8px;
+                height: 8px;
+                background-color: $red;
+                border: 2px solid $white;
+                border-radius: 100%;
+            }
         }
     }
 }
@@ -217,49 +230,49 @@ main{
     grid-row-gap: 24px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-        "card1 card2 card4"
-        "card1 card3 card4"
-        "card5 card5 card6"
+        "timer work highlight"
+        "timer progress highlight"
+        "courses courses feedback"
     ;    
   
     .card1 {
-        grid-area: card1;
+        grid-area: timer;
     }
   
     .card2 {
-        grid-area: card2;
+        grid-area: work;
     }
   
     .card3 {
-        grid-area: card3;
+        grid-area: progress;
     }
   
     .card4 {
-        grid-area: card4;
+        grid-area: highlight;
     }
   
     .card5 {
-        grid-area: card5;
+        grid-area: courses;
     }
   
     .card6 {
-        grid-area: card6;
+        grid-area: feedback;
     }
 }
 
 .timer-card {
     height: 158px;
     margin: 16px 0;
-    border: 1px solid $borderGray;
+    border: 1px solid $gray-border;
     border-radius: 10px;
 
     .heading {
         display: flex;
         height: 32px;
         padding: 6px 12px;
-        background-color: $lightGray;
+        background-color: $gray-light;
         border-radius: 10px 10px 0 0;
-        border: 1px solid $borderGray;
+        border: 1px solid $gray-border;
         flex-direction: row;
         align-items: center;
 
@@ -286,7 +299,7 @@ main{
             @include text-setup(40px, 48px, 500);
 
             .seconds {
-                color: $mediumGray;
+                color: $gray-medium;
             }
         }
     }
@@ -332,14 +345,13 @@ main{
             @include simple-hover();
         }
     }
-
 }
 
 .history {
     .title {
         margin: 0 0 14px 0;
         color: $gray;
-        @include text-setup(11px, 12px, 500)
+        @include text-setup(11px, 12px, 500);
     }
 
     .history-item {
@@ -353,7 +365,7 @@ main{
             justify-content: center;        
             width: 40px;
             height: 40px;
-            border: 1px solid $borderGray;
+            border: 1px solid $gray-border;
             border-radius: 100%;
             margin: 0 10px 0 0;
 
@@ -366,11 +378,11 @@ main{
             width: 230px;
 
             .item-title {
-                @include text-setup(14px, 20px, 400)
+                @include text-setup(14px, 20px, 400);
             }
 
             .item-timer {
-                @include text-setup(12px, 16px, 400)
+                @include text-setup(12px, 16px, 400);
             }
         }
     }
@@ -396,7 +408,7 @@ main{
     }
 }
 
-.work-progress{
+.work-progress {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -407,7 +419,7 @@ main{
         height: 10px;
         width: 30%;
         border-radius: 2px;
-        background-color: $borderGray;
+        background-color: $gray-border;
     }
 
     &.colorize {        
@@ -416,24 +428,23 @@ main{
         }
 
         .active {
-            background-color: $oceanBlue;
+            background-color: $blue-ocean;
         }
 
         .extra-hour {
             background-color: $blue;
         }
-        
     }
 }
 
 .work-label {
     span {
-        color: $borderGray;
+        color: $gray-border;
         margin: 0 16px 0 0;
         @include text-setup(12px, 16px, 400);
         
         .icon {
-            color: $borderGray;
+            color: $gray-border;
             margin: 0 4px 0 0;
         }
     }
@@ -451,7 +462,7 @@ main{
 
         .active {
             .icon{
-                color: $oceanBlue;
+                color: $blue-ocean;
             }
         }
 
@@ -460,9 +471,7 @@ main{
                 color: $blue;
             }
         }
-        
     }
-    
 }
 
 .coursesProgress {
@@ -476,25 +485,23 @@ main{
         height: 80px;
         border-radius: 50%;
 
-        &.empty{
+        &.empty {
             .progress-bar {
                 display: none
             }
         }
-    }
-
-    
+    }    
 
     .progress-circle {
+        z-index: 0;
         position: absolute;
-        width: 80px;
         top: 0;
         left: 0;
         height: 80px;
+        width: 80px;
         background-color: $white;
-        border: 6px solid $borderGray;
+        border: 6px solid $gray-border;
         border-radius: 50%;
-        z-index: 0;
     }
 
     .progress-bar {
@@ -519,7 +526,7 @@ main{
         @include text-setup(14px, 20px, 500);
     }
 
-    .content-courses{
+    .content-courses {
         width: 220px;
 
         h4 {
@@ -548,7 +555,7 @@ main{
         justify-content: center;
         height: 36px;
         margin: 16px 0;
-        background-color: $lightGray;
+        background-color: $gray-light;
         border-radius: 10px;
 
         .btn {
@@ -592,20 +599,20 @@ main{
             display: flex;
             flex-direction: column;
 
-            .title{
+            .title {
                 margin: 0 0 6px 0;
-                @include text-setup(18px, 24px, 500)
+                @include text-setup(18px, 24px, 500);
             }
 
-            .subtitle, .achievement{
-                @include text-setup(16px, 12px, 400)
+            .subtitle, .achievement {
+                @include text-setup(16px, 12px, 400);
             }
         }
     }
     
     .comment-item {
         display: flex;
-        border-bottom: 1px solid $borderGray;
+        border-bottom: 1px solid $gray-border;
         padding: 16px 0;
         
         &:last-child {
@@ -633,7 +640,7 @@ main{
         }
     }
     
-    .not-highlight{
+    .not-highlight {
         min-height: 250px;
         @include not-information();
     }
@@ -655,14 +662,16 @@ main{
 }
 
 .courses {
-    .table{
+    overflow-x:auto;
+
+    .table {
         width: 100%;
         margin: 16px 0;
         border-collapse: collapse;
 
         .head {
             height: 36px;
-            background-color: $lightGray;
+            background-color: $gray-light;
             color: $gray;
             @include text-setup (14px, 20px, 400);
             
@@ -707,14 +716,14 @@ main{
 
         .title {
             margin: 0 0 4px 0;
-            @include text-setup (14px, 20px, 400)
+            @include text-setup (14px, 20px, 400);
         }
 
         .subtitle {            
-            @include text-setup (12px, 14px, 400)
+            @include text-setup (12px, 14px, 400);
         }
 
-        .container{
+        .container {
             display: flex;
             flex-direction: row;
             padding: 0;
@@ -730,7 +739,7 @@ main{
             width: 100%;
             top: 5px;
             height: 6px;
-            background-color: $borderGray;
+            background-color: $gray-border;
             border-radius: 8px;
         }
 
@@ -746,12 +755,12 @@ main{
 
         .percent {
             margin: 0 0 0 4px;
-            @include text-setup (12px, 16px, 400)
+            @include text-setup (12px, 16px, 400);
         }
 
         .badget {
             display: inline-block;
-            border: 1px solid $borderGray;
+            border: 1px solid $gray-border;
             border-radius: 6px;
             padding: 4px 8px 4px 4px;
             color: $gray;
@@ -773,13 +782,13 @@ main{
         }
     }
 
-    .not-courses{
+    .not-courses {
         min-height: 250px;
         @include not-information();
     }
 }
 
-.not-feedback{
+.not-feedback {
     min-height: 400px;
     @include not-information();
 }
@@ -794,15 +803,15 @@ main{
         margin: 16px 0;
         
         h5 {
-            @include text-setup(16px, 24px, 500)
+            @include text-setup(16px, 24px, 500);
         }
 
         p {
-            @include text-setup(12px, 16px, 400)
+            @include text-setup(12px, 16px, 400);
         }
     }
 
-    .icon-container{
+    .icon-container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -830,7 +839,7 @@ main{
         flex-direction: row;
 
         li {
-            border: 1px solid $borderGray;
+            border: 1px solid $gray-border;
             width: 25%;
             
             .btn {
@@ -840,7 +849,7 @@ main{
             }
 
 
-            &:first-child{
+            &:first-child {
                 border-top-left-radius: 10px;
             }
 
@@ -848,10 +857,10 @@ main{
                 border-top-right-radius: 10px;
             }
 
-            &:hover{
-                background-color: $lightGray;
+            &:hover {
+                background-color: $gray-light;
             }
-        }        
+        }
     }
 
     .input-lg {
@@ -860,7 +869,7 @@ main{
         width: 100%;
         min-height: 84px;
         padding: 12px;
-        border: 1px solid $borderGray;
+        border: 1px solid $gray-border;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         resize: none;
@@ -880,12 +889,12 @@ main{
         @include text-setup(14px, 20px, 500);
 
         &:hover {
-            background-color: $lightGray;
+            background-color: $gray-light;
         }
     }
 }
 
-.not-content{
+.not-content {
     height: 100vh;
     height: calc(100vh - 88px);
     width: calc(100vw - 273px);

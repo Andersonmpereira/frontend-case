@@ -1,5 +1,5 @@
 <template>
-    <div class="divider"></div>
+    <hr class="divider"/>
     <DailyWorkTimer 
         :hours="work.active.hours"
         :minutes="work.active.minutes"

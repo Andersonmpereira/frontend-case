@@ -1,6 +1,6 @@
 <template>
     <div class="not-feedback" v-if="!mock">
-        <img src="../../assets/img/not-feedback.png" alt="ilustração de bloco de notas">
+        <img src="~/assets/img/not-feedback.png" alt="ilustração de bloco de notas">
         <p>
             Sem registros de feedback ainda. Por favor, verifique mais tarde.
         </p>

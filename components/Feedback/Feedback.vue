@@ -1,5 +1,5 @@
 <template>
-    <div class="divider"></div>
+    <hr class="divider"/>
     <FeedbackContent 
         :mock="mock"
     /> 

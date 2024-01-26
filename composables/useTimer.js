@@ -1,3 +1,6 @@
+/**
+ * Manipulates and saves time counter information
+ */
 export default () => {
     const stateTimer = reactive({
         isRunning: false,
@@ -6,12 +9,18 @@ export default () => {
         history: []
     })
 
+    /**
+     * starts the counter.
+     */
     const startTimer = () => {
         stateTimer.isRunning = true
         stateTimer.startTime = 0
         counter()
     }
 
+    /**
+     * Ends the counter action and adds the value to the history.
+     */
     const stopTimer = () => {
         stateTimer.isRunning = false
         const formattedTime = formatElapsedTime(stateTimer.elapsedTime)
@@ -19,30 +28,36 @@ export default () => {
         stateTimer.elapsedTime = 0
     }
 
+    /**
+     * Just pause the counter
+     */
     const pauseTimer = () => {
         stateTimer.isRunning = !stateTimer.isRunning
     }
 
-    const resetTimer = () => {
-        stateTimer.isRunning = false
-        stateTimer.startTime = null
-        stateTimer.elapsedTime = 0
-    }
-
+    /**
+     * Recursion to increment the seconds
+     * @param {Number} value - Time value in seconds
+     */
     const counter = (value = stateTimer.elapsedTime) => {
         if (!stateTimer.isRunning) return
         stateTimer.elapsedTime = value
         setTimeout(() => counter(value + 1), 1000)
     }
 
+    /**
+     * save time in history
+     * @param {String} Entry - Time
+     */
     const addToHistory = (entry) => {
         stateTimer.history.push(entry)
     }
 
-    const removeFromHistory = (entryId) => {
-        stateTimer.history.splice(entryId, 1)
-    }
-
+    /**
+     * Formats text in the desired pattern
+     * @param {String} elapsedTime - Time in seconds
+     * @return {String} - Formatted time
+     */
     const formatElapsedTime = (elapsedTime) => {
         const hours = Math.floor(elapsedTime / 3600)
         const minutes = Math.floor((elapsedTime % 3600) / 60)
@@ -50,6 +65,9 @@ export default () => {
         return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
     }
 
+    /**
+     * Convert and format then time
+     */
     const pad = (value) => {
         return value.toString().padStart(2, '0')
     }
@@ -59,8 +77,6 @@ export default () => {
         startTimer,
         stopTimer,
         pauseTimer,
-        resetTimer,
         addToHistory,
-        removeFromHistory,
     }
 }

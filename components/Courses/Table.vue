@@ -54,7 +54,7 @@
         </tbody>
     </table>
     <div class="not-courses" v-if="!mock">
-        <img src="../../assets/img/not-found.png" alt="Ilustração de livros">
+        <img src="~/assets/img/not-found.png" alt="Ilustração de livros">
         <p>
             Não há registro de cursos ainda.<br> 
             Por favor verifique mais tarde.

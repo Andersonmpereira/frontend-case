@@ -3,7 +3,7 @@
       border-radius: 4px;
   
       &:hover {
-        background-color: $borderGray;
+        background-color: $gray-border;
       }
     }
   
@@ -16,7 +16,7 @@
 
 @mixin simple-hover() {
   &:hover{
-    background-color: $lightGray;
+    background-color: $gray-border;
     border-radius: 8px;
   }
 }
@@ -42,7 +42,7 @@
 
   p {
     margin: 20px 16px;
-    color: $mediumGray;
+    color: $gray-medium;
     @include text-setup(14px, 20px, 400);
   }
 }

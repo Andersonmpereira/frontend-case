@@ -9,18 +9,12 @@
         />
     </div>
     <div v-else class="not-history">
-        <img src="../../assets/img/not-history.png" alt="laptop com timer">
+        <img src="~/assets/img/not-history.png" alt="laptop com timer">
         <p>Sem registro de atividades.</p>
     </div>
 </template>
 
 <script setup>
-    const { removeFromHistory } = useTimer()
-
-    const removeItemFromHistory = (index) => {
-        removeFromHistory(index)
-    }
-
     const props = defineProps({
         history: {
             type: Array
