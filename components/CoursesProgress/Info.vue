@@ -1,5 +1,5 @@
 <template>
-    <div class="information" v-if="!status">
+    <div class="information" v-if="!mock">
         <h4>Nenhum curso em andamento</h4>
         <p>Não há progresso em nenhum curso ainda. Considere se inscrever em um.</p>
         <NuxtLink to="">Inscrever-se</NuxtLink>    
@@ -13,7 +13,7 @@
 
 <script setup>
     const props = defineProps({
-        status: {
+        mock: {
             type: Boolean,
             required: true
         }

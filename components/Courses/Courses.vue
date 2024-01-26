@@ -1,7 +1,7 @@
 <template>
     <div class="courses">
         <CoursesTable
-            :status="true"
+            :mock="true"
         />
     </div>
 </template>

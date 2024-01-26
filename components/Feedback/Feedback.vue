@@ -1,10 +1,10 @@
 <template>
     <div class="divider"></div>
     <FeedbackContent 
-        :status="status"
+        :mock="mock"
     /> 
 </template>
 
 <script setup>
-    const status = ref(true);
+    const mock = ref(true);
 </script>

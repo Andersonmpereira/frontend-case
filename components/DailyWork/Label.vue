@@ -20,13 +20,13 @@
 
 <script setup>
     const props = defineProps({
-        status: {
+        mock: {
             type: Boolean,
             default: false
         }
     })
 
     const colorize = computed(() => {
-        if (props.status) return 'colorize'
+        if (props.mock) return 'colorize'
     })
 </script>

@@ -9,7 +9,7 @@
                 <th width="10%" scope="col"></th>                
             </tr>
         </thead>
-        <tbody class="body" v-if="status">
+        <tbody class="body" v-if="mock">
             <tr
                 v-for="row in progress"
             >
@@ -53,7 +53,7 @@
             </tr>           
         </tbody>
     </table>
-    <div class="not-courses" v-if="!status">
+    <div class="not-courses" v-if="!mock">
         <img src="../../assets/img/not-found.png" alt="Ilustração de livros">
         <p>
             Não há registro de cursos ainda.<br> 
@@ -118,7 +118,7 @@
     ]
 
     const props = defineProps({
-        status: {
+        mock: {
             type: Boolean,
             default: false
         }

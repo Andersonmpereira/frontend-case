@@ -10,7 +10,7 @@
         :extra="work.active.extra"
     />
     <DailyWorkLabel 
-        :status="true"
+        :mock="true"
     />
 </template>
 

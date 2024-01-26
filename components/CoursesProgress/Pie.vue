@@ -1,5 +1,5 @@
 <template>
-    <div class="pie" v-if="status">
+    <div class="pie" v-if="mock">
         <figure class="progress-circle"></figure>
         <figure class="progress-bar"></figure>
         <span class="score">25%</span>
@@ -13,7 +13,7 @@
 
 <script setup>
     const props = defineProps({
-        status: {
+        mock: {
             type: Boolean,
             required: true
         }

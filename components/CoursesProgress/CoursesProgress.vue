@@ -2,16 +2,16 @@
     <div class="divider"></div>
     <div class="coursesProgress">
         <CoursesProgressPie 
-            :status="status"
+            :mock="mock"
         />
         <div class="content-courses">
             <CoursesProgressInfo 
-                :status="status"
+                :mock="mock"
             />
         </div>
     </div>
 </template>
 
 <script setup>
-    const status = true
+    const mock = true
 </script>

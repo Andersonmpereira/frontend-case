@@ -1,6 +1,8 @@
 
 <template>
     <div class="highlights">
-        <HighlightTabs />
+        <HighlightTabs 
+            :mock="true"
+        />
     </div>
 </template>

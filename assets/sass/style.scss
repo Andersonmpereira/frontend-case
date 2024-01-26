@@ -561,24 +561,96 @@ main{
             width: 33%;
             height: 28px;
             padding: 0;
+            margin: 4px;
             font-size: 14px;
             line-height: 20px;
             font-weight: 500;
             color: $gray;
-            width: 33%;
 
             &.active {
                 background-color: $white;
-                box-shadow: 0px 2px 4px 0px #1B1C1D05;
+                color: $black;
+                border-radius: 8px;
                 box-shadow: 0px 6px 10px 0px #1B1C1D0F;
+            }
 
+            &.disabled {
+                background-color: transparent;
+                cursor: not-allowed;
             }
         }
     }
+    
+    .general, .gift {
+        @include column-center();
 
+        img {
+            margin: 16px 0;
+        }
+
+        .identity {
+            display: flex;
+            flex-direction: column;
+
+            .title{
+                margin: 0 0 6px 0;
+                @include text-setup(18px, 24px, 500)
+            }
+
+            .subtitle, .achievement{
+                @include text-setup(16px, 12px, 400)
+            }
+        }
+    }
+    
+    .comment-item {
+        display: flex;
+        border-bottom: 1px solid $borderGray;
+        padding: 16px 0;
+        
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .avatar {
+        margin: 0 12px 0 0;
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        .name {
+            @include text-setup(12px, 16px, 400);
+            color: $gray;
+        }
+
+        .text {
+            @include text-setup(14px, 20px, 400);
+            color: $black;
+        }
+    }
+    
     .not-highlight{
         min-height: 250px;
         @include not-information();
+    }
+
+    .icon {
+        .red {
+            color: $red;
+        }
+    }
+
+    .btn-outline {
+        width: 100%;
+        @include text-setup(14px, 20px, 500);
+
+        .icon {
+            margin: 0 8px 0 0;
+        }
     }
 }
 
@@ -736,6 +808,7 @@ main{
         justify-content: center;
         width: 40px;
         height: 40px;
+        margin: 0 0 12px 0;
         background-color: #FEF3EB;
         border-radius: 100%;
 

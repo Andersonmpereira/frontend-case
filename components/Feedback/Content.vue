@@ -1,5 +1,5 @@
 <template>
-    <div class="not-feedback" v-if="!status">
+    <div class="not-feedback" v-if="!mock">
         <img src="../../assets/img/not-feedback.png" alt="ilustração de bloco de notas">
         <p>
             Sem registros de feedback ainda. Por favor, verifique mais tarde.
@@ -15,9 +15,9 @@
 </template>
 
 <script setup>
-    const status = ref(true);
+    const mock = ref(true);
 
     const handleSubmit = () => {
-        status.value = false
+        mock.value = false
     }
 </script>
