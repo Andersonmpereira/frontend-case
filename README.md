@@ -9,7 +9,7 @@ Desafio tecnico para a vaga de front-end da empresa Jurisoft
 3. [Instalação](#instalação)
 4. [Como Usar](#como-usar)
 5. [Estrutura do Projeto](#estrutura-do-projeto)
-6. [Considerações do candidato](#consideraçoes-do-candidato)
+6. [Considerações do candidato](#considerações-do-candidato)
 
 ## Visão Geral
 
