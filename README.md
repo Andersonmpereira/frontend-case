@@ -42,14 +42,12 @@ $ npm install
 Para inciar o projeto, acesso o diretorio clonado e rode o comando
 ```bash.
 $ npm run dev
-
 ```
 
 Com isso já é possivel acessar o projeto localmente.<br>
 O acesso é `localhost:porta`, por exemplo:
 ```bash.
 http://localhost:3000/
-
 ```
 
 Alguns dados são mockados e é possível ativá-los ou desativá-los por meio da variável/prop chamada `mock`. Para ativar o `mock`, defina `mock=true`; para desativá-lo e visualizar os dados reais, defina `mock=false`.
