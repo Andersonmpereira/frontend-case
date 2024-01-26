@@ -468,11 +468,55 @@ main{
 .coursesProgress {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
-    .progress {
+    .pie {
+        position: relative;
         width: 80px;
         height: 80px;
+        border-radius: 50%;
+
+        &.empty{
+            .progress-bar {
+                display: none
+            }
+        }
+    }
+
+    
+
+    .progress-circle {
+        position: absolute;
+        width: 80px;
+        top: 0;
+        left: 0;
+        height: 80px;
+        background-color: $white;
+        border: 6px solid $borderGray;
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    .progress-bar {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;  
+        width: 80px;
+        height: 80px;
+        border: 6px solid $orange;
+        border-radius: 50%;
+        clip-path: polygon(50% 0%, 50% 50%, 100% 50%, 100% 0%);
+    }
+
+    .score {
+        z-index: 4;
+        position: absolute;
+        width: 80px;
+        margin: 30px 0;
+        color: $gray;
+        text-align: center;
+        @include text-setup(14px, 20px, 500);
     }
 
     .content-courses{
