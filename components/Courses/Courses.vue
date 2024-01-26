@@ -1,5 +1,7 @@
 <template>
     <div class="courses">
-        <CoursesTable/>
+        <CoursesTable
+            :status="true"
+        />
     </div>
 </template>

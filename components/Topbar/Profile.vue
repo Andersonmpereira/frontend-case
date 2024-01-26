@@ -3,7 +3,7 @@
         <button class="btn btn-transparent" @click="toggle"> 
             <Icon class="icon" name="ri:menu-line" width="20" height="20"/>
         </button>
-        <img class="avatar" src="../../assets/img/avatar/sophia-md.png" alt="avatar da sophia">
+        <img class="avatar" src="/img/avatar/sophia-md.png" alt="avatar da sophia">
         <div class="identity">
             <span class="title">
                 Sophia Williams             
