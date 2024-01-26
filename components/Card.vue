@@ -1,5 +1,5 @@
 <template>
-    <div 
+    <section 
         class="card"
         :class="card"
     >
@@ -30,7 +30,7 @@
             </button>
         </div>
         <slot/>
-    </div>
+    </section>
 </template>
 
 <script setup>

@@ -62,7 +62,7 @@ Alguns dados são mockados e é possível ativá-los ou desativá-los por meio d
 O projeto segue a linha de estrutura padrão do `nuxt` e foi utilizado:
 
 - Layout: criei um layout padrão para ser acessado por todas as pages
-- Componentes: criei alguns componentes para modularizar a aplicação
+- Components: criei alguns componentes para modularizar a aplicação
 - Pages: Crei as paginas mesmo sem conteudo simular navegação na aplicação
 - Composables: Criei para gerenciar o cronometro
 - Assets: Contém os estilos padrões e imagens complementares
@@ -71,7 +71,7 @@ O projeto segue a linha de estrutura padrão do `nuxt` e foi utilizado:
 
 - De modo geral foi um desafio extremamente interessante que pude validar meu conhecimento
 - Apesar de ter feito algumas funcionalidades e  mockado informações dinamicamente, meu foco principal foi na fidelidade ao layout e sua adaptação a diferentes dispositivos
-- A aplicação está responsiva e só não foi considerado resoluções extremamente pequenas
+- A aplicação está responsiva
 - Por conta do tempo, não consegui fazer o gerenciamento dos botões do widget baseado se há ou não conteudo mockado e a inserção da barra de pesquisa na tabela
 - Também gostaria de ter implementado modo escuro e testes unitarios, pelo menos para o contador
 
